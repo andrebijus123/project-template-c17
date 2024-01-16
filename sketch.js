@@ -67,18 +67,28 @@ function draw() {
     else if (diamondsG.isTouching(boy)) {
       diamondsG.destroyEach();
             //aumente a treasureCollection para 100
-   
+            treasureCollection=treasureCollection+100;
     }
     else if(jwelleryG.isTouching(boy)) {
       jwelleryG.destroyEach();
             //aumente a treasureCollection para 150
-
+            treasureCollection=treasureCollection+150;
           }
     else{
       if(swordGroup.isTouching(boy)) {
 //Mude o gameState (estado do jogo) para End
+  gameState=END;
 //destrua todos os grupos
 // defina setvelocityEach como 0 para todos os grupos
+cashG.destroyEach();
+        diamondsG.destroyEach();
+        jwelleryG.destroyEach();
+        swordGroup.destroyEach();
+        
+        cashG.setVelocityYEach(0);
+        diamondsG.setVelocityYEach(0);
+        jwelleryG.setVelocityYEach(0);
+        swordGroup.setVelocityYEach(0);
     }
 
   }
